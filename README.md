@@ -1,10 +1,10 @@
-# Web Development Project 5 - *Seat Geek Event sSearch and Filter*
+# Web Development Project 5&6 - *Seat Geek Event sSearch and Filter*
 
 Submitted by: **John Chen**
 
 This web app: **Allows users to search anf filter events in Seat Geek. Also shows the average price of all events, total number of events, and the highest price of all events. Users can filter events based only in NY, NYC, or concerts**
 
-Time spent: **6** hours spent in total
+Time spent: **11** hours spent in total
 
 ## Required Features
 
@@ -27,11 +27,28 @@ The following **additional** features are implemented:
 
 * [ ] List anything else that you added to improve the site's functionality!
 
+## PART 2
+The following **required** functionality is completed:
+
+- [x] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
+- [x] **Clicking on an item in the list view displays more details about it**
+- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
+
+
+The following **optional** features are implemented:
+
+- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
+- [ ] The site allows users to toggle between different data visualizations
+
+The following **additional** features are implemented:
+
+* [ ] List anything else that you added to improve the site's functionality!
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/MNfRysp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/3PCkyft.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
@@ -42,7 +59,7 @@ GIF created with ...
 
 ## Notes
 
-Learned to use filter and map. Practiced API doc usage. Practiced DOM manipulation.
+Learned to use filter and map. Practiced API doc usage. Practiced DOM manipulation. Learned about routing and practiced data visualization tools.
 
 ## License
 

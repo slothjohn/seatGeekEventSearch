@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import EventDetails from "./EventDetails";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
 
 const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
 
 //stats: average, lowest price, num of events
 //filter: NYC only
 //NY only
-//concert only 
+//concert only
 
 function App() {
   const [events, setEvents] = useState([]);
   const [averagePrice, setAveragePrice] = useState(0);
   const [highestPrice, setHighestPrice] = useState(0);
-  const [search, setsearch] = useState('');
+  const [search, setsearch] = useState("");
   const [showNYEvents, setShowNYEvents] = useState(false);
   const [showConcerts, setShowConcerts] = useState(false);
-  
-  
+
   useEffect(() => {
     axios
       .get(
@@ -52,6 +62,24 @@ function App() {
     ? showFilteredEvents.filter((event) => event.type === "concert")
     : showFilteredEvents;
 
+  const datas = [
+    { id: 1, title: "Jaguars 1-B", date: "2022-05-01", participants: 50 },
+    { id: 2, title: "Buckcherry", date: "2022-06-01", participants: 70 },
+    {
+      id: 3,
+      title: "Fozzy",
+      date: "2022-07-01",
+      participants: 40,
+    },
+    { id: 4, title: "Gerry Dee", date: "2022-08-01", participants: 90 },
+    { id: 5, title: "Casting Crowns", date: "2022-09-01", participants: 60 },
+  ];
+
+  const data = datas.map((event) => ({
+    title: event.title,
+    participants: event.participants,
+  }));
+
   return (
     <div>
       <div className="stats">
@@ -65,6 +93,15 @@ function App() {
           Highest Price of all events: ${highestPrice}
         </h2>
       </div>
+      <h2>Events Data Visualization Participants</h2>
+      <BarChart width={600} height={300} data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="title" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="participants" fill="#8884d8" />
+      </BarChart>
       <div className="data">
         <input
           type="text"
@@ -84,7 +121,9 @@ function App() {
         {showFilteredEvents.length > 0 ? (
           showFilteredEvents.map((event) => (
             <div key={event.id}>
-              <h2>{event.title}</h2>
+              <Link to={`/EventDetails/${event.id}`}>
+                <h2>{event.title}</h2>
+              </Link>
               <p>
                 Average Price:{" "}
                 {event.stats.average_price
